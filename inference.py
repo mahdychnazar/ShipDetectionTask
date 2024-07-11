@@ -6,8 +6,8 @@ import cv2
 import os
 import sys
 
-#python inference.py F:\ML\ShipDetectionTask\examples\00dc34840.jpg
-#python inference.py C:\Users\Nazar\Desktop\cat.jpg
+#python inference.py examples\00dc34840.jpg
+#python inference.py examples
 
 #makes the model output stackable with the original image
 def make_prediction(image_path):
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     if os.path.exists(input):
         if os.path.isfile(input):
             #if input argument is an image file, the model output is displayed and saved into "./output" folder.
-            if input.endswith(".png") or input.endswith(".jpeg") or input.endswith(".jpg"):
+            if input.endswith(".jpeg") or input.endswith(".jpg"):
                 image = cv2.imread(input)
                 image = cv2.resize(image, (768,768))  
                 predict = make_prediction(input)

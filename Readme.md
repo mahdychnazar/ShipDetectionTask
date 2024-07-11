@@ -6,47 +6,50 @@
 4. Data preparation and input pipeline
 5. Summary
  \
- \
 
 # 1. Project deployment:
 
+python --version: 3.10
+
 ## 1.1 Setting up with conda:
 1. Download the project:
-```git clone <repo>```
+```git clone https://github.com/mahdychnazar/ShipDetectionTask```
 2. Open the project in terminal:
-```cd <repo>```
+```cd ShipDetectionTask```
 2. Create the environment from the environment.yml file:
 ```conda env create -f environment.yml```
 3. Activate conda environment:
 ```conda activate ship_detection_env```
 4. The project is ready to be tested.
-``` python inference.py ./path_to_image ```
+``` python inference.py <path to an image or a folder> ```
 
-\
 
 ## 1.2 Setting up with virtual environment:
 1. Download the project:
-```git clone <repo>```
+```git clone https://github.com/mahdychnazar/ShipDetectionTask```
 2. Open the project in terminal:
-```cd <repo>```
+```cd ShipDetectionTask```
 3. Install virtualenv, if not installed:
 ```pip install virtualenv```
 4. Crete new virtual environment:
 ```virtualenv venv```
 5. Enter the virtual environment:
-```source venv/bin/activate```
+```source venv/bin/activate``` (Linux)
+```venv\Scripts\activate``` (Windows)
+
 6. Install dependecies:
 ```pip install -r requirements.txt```
+7. The project is ready to be tested.
+``` python inference.py <path to an image or a folder> ```
 
 Versions list for running tensorflow on GPU:
-
-python: 3.10
 
 tensorflow: 2.10.1
 
 CUDA: 11.2
 
 cuDNN: 8.1
+
 # 2. Exploratory data analysis summary:
 
 The dataset of square images 768x768 pixels. Most of the images do not contain ships the rest contain from 1 to 15 ships. Labels are provided in .csv file, where each row contains image filename and ship position in run-length encoding format. Overall, there are 81723 ships on 192556 images. All images have same size. 
